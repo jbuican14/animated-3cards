@@ -1,0 +1,483 @@
+/* I am going to update the formular so button can be reuse in multiple places */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Kalam", cursive;
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(125, 45, 123, 0.6)), to(rgba(192, 71, 122, 0.5)));
+  background: linear-gradient(to top, rgba(125, 45, 123, 0.6), rgba(192, 71, 122, 0.5));
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: url(https://thehackneywick.co.uk/assets/background/bg-teddy_tree-1440x814.jpg) center no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    height: 100%;
+  }
+}
+
+.heading {
+  font-size: 5rem;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  white-space: pre-wrap;
+  color: #8b1010;
+  text-shadow: 0.1rem 0.2rem 0.5rem rgba(249, 245, 245, 0.8);
+}
+
+.heading::after {
+  content: '';
+  width: 0.4rem;
+  height: 5.8rem;
+  background-color: #8b1010;
+  position: absolute;
+  -webkit-animation: blinkingAnim 1s 3s 10;
+          animation: blinkingAnim 1s 3s 10;
+}
+
+@media (max-width: 1000px) {
+  .heading::after {
+    height: 4.3rem;
+  }
+}
+
+@media (max-width: 1224px) {
+  .heading {
+    font-size: 6.5rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 1170px) {
+  .heading {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .heading {
+    font-size: 4rem;
+  }
+}
+
+@-webkit-keyframes blinkingAnim {
+  0% {
+    background-color: #8b1010;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #8b1010;
+  }
+}
+
+@keyframes blinkingAnim {
+  0% {
+    background-color: #8b1010;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #8b1010;
+  }
+}
+
+.cards-wrapper {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+  top: 25.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 1224px) {
+  .cards-wrapper {
+    width: 100%;
+    top: 40.2%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cards-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 30rem 0 20rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .cards-wrapper {
+    padding: 25rem 0 15rem 0;
+  }
+}
+
+@-webkit-keyframes cardAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cardAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card {
+  width: 28rem;
+  background: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+@media (max-width: 1000px) {
+  .card {
+    margin: 0 3rem 5rem 2rem;
+  }
+}
+
+.card:nth-child(1) {
+  -webkit-animation: cardAnim 2s 3s backwards;
+          animation: cardAnim 2s 3s backwards;
+}
+
+.card:nth-child(2) {
+  -webkit-animation: cardAnim 2s 3.5s backwards;
+          animation: cardAnim 2s 3.5s backwards;
+}
+
+.card:nth-child(3) {
+  -webkit-animation: cardAnim 2s 4s backwards;
+          animation: cardAnim 2s 4s backwards;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.card:hover.about-me {
+  font-size: 1.6rem;
+}
+
+.card:hover button {
+  -webkit-animation: buttonAnim 2s 1s linear;
+          animation: buttonAnim 2s 1s linear;
+}
+
+.card h1 {
+  font-size: 2.2rem;
+  color: #d35a8a;
+}
+
+.card button {
+  width: 12rem;
+  text-transform: uppercase;
+  padding: 0.7rem;
+  margin: 1rem 0;
+  background-color: pink;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  color: #333;
+  -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+@-webkit-keyframes buttonAnim {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  5% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  10% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  15% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  20% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  25% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  30% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  35% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  40% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  45% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  50% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  55% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  60% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  65% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  70% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  75% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  80% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  85% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  90% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  95% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  100% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+}
+
+@keyframes buttonAnim {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  5% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  10% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  15% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  20% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  25% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  30% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  35% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  40% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  45% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  50% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  55% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  60% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  65% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  70% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  75% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  80% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  85% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  90% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+  95% {
+    -webkit-transform: scale(1.2) rotateZ(5deg);
+            transform: scale(1.2) rotateZ(5deg);
+  }
+  100% {
+    -webkit-transform: scale(1.2) rotateZ(-5deg);
+            transform: scale(1.2) rotateZ(-5deg);
+  }
+}
+
+.image-top {
+  width: 100%;
+  height: 22rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+}
+
+@media (max-width: 1224px) {
+  .image-top {
+    top: 20rem;
+  }
+}
+
+.profile-image {
+  width: 12rem;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  padding: 0.1rem;
+  border: 1rem solid #d35a8a;
+  margin-top: -11rem;
+  z-index: 5;
+}
+
+.job {
+  color: #777;
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+
+.about-me {
+  font-size: 1.4rem;
+  width: 90%;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #7d535b;
+  text-align: center;
+}
+
+.social-icons {
+  width: 15rem;
+  margin: 1rem 0 2rem 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-top: 0.1rem solid #999;
+  padding-top: 2rem;
+}
+
+.social-icons i {
+  font-size: 1.8rem;
+}
+
+.fa-facebook-f {
+  color: #3b5999;
+}
+
+.fa-google-plus-g {
+  color: #dd4b39;
+}
+
+.fa-twitter {
+  color: #55acee;
+}
+
+.fa-youtube {
+  color: #cd201f;
+}
+/*# sourceMappingURL=style.css.map */

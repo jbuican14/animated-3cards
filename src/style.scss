@@ -1,0 +1,300 @@
+$FONT_TITLE: 'Nerko One', cursive;
+$FONT_TEXT: 'Kalam', cursive;
+$COLOR_WHITE: #ffffff;
+
+/* I am going to update the formular so button can be reuse in multiple places */
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $FONT_TEXT;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    to top,
+    rgba(125, 45, 123, 0.6),
+    rgba(192, 71, 122, 0.5)
+  );
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: url(https://thehackneywick.co.uk/assets/background/bg-teddy_tree-1440x814.jpg)
+    center no-repeat;
+  background-size: cover;
+
+  @media (max-width: 1000px) {
+    height: 100%;
+  }
+}
+
+.heading {
+  font-size: 5rem;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  white-space: pre-wrap;
+  color: #8b1010;
+  text-shadow: 0.1rem 0.2rem 0.5rem rgba(249, 245, 245, 0.8);
+
+  &::after {
+    content: '';
+    width: 0.4rem;
+    height: 5.8rem;
+    background-color: #8b1010;
+    position: absolute;
+    animation: blinkingAnim 1s 3s 10;
+    @media (max-width: 1000px) {
+      height: 4.3rem;
+    }
+  }
+
+  @media (max-width: 1224px) {
+    font-size: 6.5rem;
+    width: 80%;
+  }
+  @media (max-width: 1170px) {
+    font-size: 6rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 4rem;
+  }
+}
+
+@keyframes blinkingAnim {
+  0% {
+    background-color: #8b1010;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #8b1010;
+  }
+}
+
+.cards-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 25.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 1224px) {
+    width: 100%;
+    top: 40.2%;
+  }
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+    padding: 30rem 0 20rem 0;
+  }
+  @media (max-width: 400px) {
+    padding: 25rem 0 15rem 0;
+  }
+}
+
+@keyframes cardAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card {
+  width: 28rem;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: transform 0.5s;
+
+  @media (max-width: 1000px) {
+    margin: 0 3rem 5rem 2rem;
+  }
+
+  &:nth-child(1) {
+    animation: cardAnim 2s 3s backwards;
+  }
+  &:nth-child(2) {
+    animation: cardAnim 2s 3.5s backwards;
+  }
+  &:nth-child(3) {
+    animation: cardAnim 2s 4s backwards;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    &.about-me {
+      font-size: 1.6rem;
+    }
+
+    button {
+      animation: buttonAnim 2s 1s linear;
+    }
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    color: #d35a8a;
+  }
+
+  button {
+    width: 12rem;
+    text-transform: uppercase;
+    padding: 0.7rem;
+    margin: 1rem 0;
+    background-color: pink;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    color: #333;
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+}
+
+@keyframes buttonAnim {
+  0% {
+    transform: scale(1) rotateZ(0);
+  }
+  5% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  10% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  15% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  20% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  25% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  30% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  35% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  40% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  45% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  50% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  55% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  60% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  65% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  70% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  75% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  80% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  85% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  90% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+  95% {
+    transform: scale(1.2) rotateZ(5deg);
+  }
+  100% {
+    transform: scale(1.2) rotateZ(-5deg);
+  }
+}
+
+.image-top {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+
+  @media (max-width: 1224px) {
+    top: 20rem;
+  }
+}
+
+.profile-image {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 0.1rem;
+  border: 1rem solid #d35a8a;
+  margin-top: -11rem;
+  z-index: 5;
+}
+
+.job {
+  color: #777;
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+
+.about-me {
+  font-size: 1.4rem;
+  width: 90%;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #7d535b;
+  text-align: center;
+}
+
+.social-icons {
+  width: 15rem;
+  margin: 1rem 0 2rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 0.1rem solid #999;
+  padding-top: 2rem;
+
+  i {
+    font-size: 1.8rem;
+  }
+}
+
+.fa {
+  &-facebook-f {
+    color: #3b5999;
+  }
+  &-google-plus-g {
+    color: #dd4b39;
+  }
+  &-twitter {
+    color: #55acee;
+  }
+  &-youtube {
+    color: #cd201f;
+  }
+}
